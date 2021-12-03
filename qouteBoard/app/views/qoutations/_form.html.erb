@@ -1,0 +1,22 @@
+<%= form_with(model: qoutation) do |form| %>
+  <% if qoutation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qoutation.errors.count, "error") %> prohibited this qoutation from being saved:</h2>
+
+      <ul>
+        <% qoutation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quote %>
+    <%= form.text_area :quote %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

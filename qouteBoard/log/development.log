@@ -1,0 +1,1371 @@
+  [1m[35m (107.9ms)[0m  [1m[35mCREATE DATABASE "qouteBoard_development" ENCODING = 'unicode'[0m
+  [1m[35m (60.1ms)[0m  [1m[35mCREATE DATABASE "qouteBoard_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:05:09 +0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 3 pending migrations:
+
+20210910024141_create_qoutations.rb
+20210910024423_devise_create_users.rb
+20210910025214_create_roles.rb
+
+
+):
+  
+activerecord (6.1.4.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.4.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateQoutations (20210910024141)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "qoutations" ("id" bigserial primary key, "quote" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910024141"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20210910024423)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910024423"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRoles (20210910025214)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "roles" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910025214"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-10 03:05:26.813372"], ["updated_at", "2021-09-10 03:05:26.813372"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:05:30 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.2ms | Allocations: 272)
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 2939)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:05:34 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.3ms | Allocations: 507)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 1617)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:07:36 +0700
+  
+ActionController::RoutingError (uninitialized constant SiteController
+Did you mean?  DeviseController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:08:41 +0700
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:08:53 +0700
+  
+ActionController::RoutingError (uninitialized constant SiteController
+Did you mean?  DeviseController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:09:27 +0700
+  
+ActionController::RoutingError (uninitialized constant SiteController
+Did you mean?  DeviseController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:13:49 +0700
+  
+ActionController::RoutingError (uninitialized constant QoutationController
+Did you mean?  QoutationsController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:16:08 +0700
+  
+NameError (undefined local variable or method `current_user' for QoutationsController:Class):
+  
+app/controllers/qoutations_controller.rb:4:in `<class:QoutationsController>'
+app/controllers/qoutations_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:18:05 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.0ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1595)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/mufaddal/Projects/WAE/Lab/qouteBoard/public/packs
+[Webpacker] Hash: e2a8a876c5815bee1e21
+Version: webpack 4.46.0
+Time: 1303ms
+Built at: 09/10/2021 10:18:07 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e421b4aa3f716bebdab1.js    125 KiB  application  [emitted] [immutable]  application
+js/application-e421b4aa3f716bebdab1.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e421b4aa3f716bebdab1.js js/application-e421b4aa3f716bebdab1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2595.2ms | Allocations: 19570)
+Completed 200 OK in 2607ms (Views: 2596.0ms | ActiveRecord: 1.0ms | Allocations: 22581)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 10:18:11 +0700
+Processing by QoutationsController#new as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 1516)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-09-10 10:18:11 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 687)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3914)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 7157)
+Completed 200 OK in 37ms (Views: 22.7ms | ActiveRecord: 5.3ms | Allocations: 14612)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-09-10 10:20:45 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 160)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4075)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4842)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-09-10 10:20:46 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 16ms (ActiveRecord: 1.8ms | Allocations: 5203)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 176)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4273)
+Completed 200 OK in 180ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 6198)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:22:10 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 11.4ms | Allocations: 243)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 164)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2133)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 5375)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 7013)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:22:22 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 4.3ms | Allocations: 7894)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:11:in `assign_role'
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:24:26 +0700
+  
+NameError (undefined local variable or method `current_user' for QoutationsController:Class):
+  
+app/controllers/qoutations_controller.rb:4:in `<class:QoutationsController>'
+app/controllers/qoutations_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:26:18 +0700
+  
+NameError (undefined local variable or method `current_user' for QoutationsController:Class):
+  
+app/controllers/qoutations_controller.rb:4:in `<class:QoutationsController>'
+app/controllers/qoutations_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:26:32 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4486)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.7ms | Allocations: 6241)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:26:36 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4614)
+Completed 200 OK in 21ms (Views: 9.1ms | ActiveRecord: 5.4ms | Allocations: 9976)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:26:41 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mRole Load (1.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 5.1ms | Allocations: 5905)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:11:in `assign_role'
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:29:52 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4458)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.7ms | Allocations: 6189)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:29:55 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4614)
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 4.2ms | Allocations: 9976)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:30:06 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mRole Load (0.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 3.9ms | Allocations: 5900)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:11:in `assign_role'
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:31:24 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4458)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.7ms | Allocations: 6189)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:31:26 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4614)
+Completed 200 OK in 23ms (Views: 10.4ms | ActiveRecord: 5.5ms | Allocations: 9975)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:31:31 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `assign_role'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 3.6ms | Allocations: 5901)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:11:in `assign_role'
+Started GET "/users" for 127.0.0.1 at 2021-09-10 10:32:32 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:32:40 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.9ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4479)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.9ms | Allocations: 6209)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:32:41 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4614)
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 4.6ms | Allocations: 9974)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:32:46 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:6:in `assign_role'
+  [1m[36mRole Load (1.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:6:in `assign_role'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 5.9ms | Allocations: 5852)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:6:in `assign_role'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:38:46 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.9ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1052)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4354)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.9ms | Allocations: 6085)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:38:48 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4614)
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 9249)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:38:52 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:6:in `assign_role'
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:6:in `assign_role'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 2.8ms | Allocations: 5708)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:6:in `assign_role'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddToUser (20210910034646)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910034646"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:49:41 +0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.5ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1299)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4963)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 1.5ms | Allocations: 7503)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:49:43 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 236)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 505)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 5928)
+Completed 200 OK in 23ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 11554)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:49:47 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:8:in `assign_role'
+  [1m[36mRole Load (1.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `assign_role'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 3.7ms | Allocations: 5731)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:8:in `assign_role'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:52:08 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.1ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4457)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 1.1ms | Allocations: 6187)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:52:10 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4614)
+Completed 200 OK in 24ms (Views: 8.0ms | ActiveRecord: 8.5ms | Allocations: 10131)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:52:14 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:8:in `assign_role'
+  [1m[36mRole Load (0.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `assign_role'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 4.0ms | Allocations: 5851)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `role_id`):
+  
+app/models/user.rb:8:in `assign_role'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRoleToUsers (20210910035527)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "role_id" bigint NOT NULL[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910035527"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 10:56:11 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.8ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4281)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.8ms | Allocations: 6012)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 10:56:13 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4614)
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 2.8ms | Allocations: 10252)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 10:56:17 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:8:in `assign_role'
+  [1m[36mRole Load (0.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `assign_role'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 643)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 113)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4881)
+Completed 200 OK in 200ms (Views: 7.4ms | ActiveRecord: 5.0ms | Allocations: 14180)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 11:09:13 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (2.5ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 4516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 7818)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 12.9ms | Allocations: 9543)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 11:09:16 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4614)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 9632)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 11:09:20 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mRole Load (2.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 524)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 113)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1628)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 4761)
+Completed 200 OK in 215ms (Views: 18.2ms | ActiveRecord: 7.6ms | Allocations: 12819)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Create (0.6ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Admin"], ["created_at", "2021-09-10 04:10:40.939150"], ["updated_at", "2021-09-10 04:10:40.939150"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Create (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Member"], ["created_at", "2021-09-10 04:10:40.947814"], ["updated_at", "2021-09-10 04:10:40.947814"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "admin@ait.asia"], ["encrypted_password", "$2a$12$PNPDlStztQeu3fVRKyChreXui2FZAufVoROWwSloLZAdZCWlu.PCy"], ["created_at", "2021-09-10 04:10:41.134237"], ["updated_at", "2021-09-10 04:10:41.134237"], ["role_id", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Create (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Admin"], ["created_at", "2021-09-10 04:11:13.389318"], ["updated_at", "2021-09-10 04:11:13.389318"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Create (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Member"], ["created_at", "2021-09-10 04:11:13.395558"], ["updated_at", "2021-09-10 04:11:13.395558"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@ait.asia"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "member@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "member@ait.asia"], ["encrypted_password", "$2a$12$C4o1umXCurq8n5GQ/XjsC.1q5vA59tMbEVtrmflqAX1CiBek2RKqK"], ["created_at", "2021-09-10 04:11:13.752296"], ["updated_at", "2021-09-10 04:11:13.752296"], ["role_id", 4]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 11:11:38 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.9ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 923)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3979)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.9ms | Allocations: 4481)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 11:11:40 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1087)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4119)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4732)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 11:11:43 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "st122331@ait.asia"], ["encrypted_password", "$2a$12$V/.BdTgupshJjzpGUDKJ5ea9XQ4eo8MVu2.d3z/nqHwCJ0WmSOBKu"], ["created_at", "2021-09-10 04:11:43.863534"], ["updated_at", "2021-09-10 04:11:43.863534"], ["role_id", 2]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/qoutations/new
+Completed 302 Found in 187ms (ActiveRecord: 7.0ms | Allocations: 8413)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 11:11:43 +0700
+Processing by QoutationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/new.html.erb within layouts/application
+  Rendered qoutations/_form.html.erb (Duration: 6.7ms | Allocations: 3688)
+  Rendered qoutations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 4080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7128)
+Completed 200 OK in 25ms (Views: 12.8ms | ActiveRecord: 4.8ms | Allocations: 11433)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-09-10 11:12:17 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 0.7ms | Allocations: 3167)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 11:12:18 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.0ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4227)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 1.0ms | Allocations: 4779)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-09-10 11:12:19 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4829)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 6343)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-09-10 11:12:22 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 178ms (ActiveRecord: 0.8ms | Allocations: 3206)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 11:12:22 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.6ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4796)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.4ms | Allocations: 5271)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 11:13:26 +0700
+Processing by QoutationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/new.html.erb within layouts/application
+  Rendered qoutations/_form.html.erb (Duration: 1.6ms | Allocations: 513)
+  Rendered qoutations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3604)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.7ms | Allocations: 5344)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 11:17:10 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.8ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1672)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 15101)
+Completed 200 OK in 35ms (Views: 22.9ms | ActiveRecord: 6.2ms | Allocations: 20109)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 11:17:15 +0700
+Processing by QoutationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/new.html.erb within layouts/application
+  Rendered qoutations/_form.html.erb (Duration: 4.3ms | Allocations: 3246)
+  Rendered qoutations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3662)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 6802)
+Completed 200 OK in 21ms (Views: 9.3ms | ActiveRecord: 3.6ms | Allocations: 11995)
+
+
+Started POST "/qoutations" for 127.0.0.1 at 2021-09-10 11:17:20 +0700
+Processing by QoutationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "qoutation"=>{"quote"=>"please work"}, "commit"=>"Create Qoutation"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.3ms | Allocations: 2839)
+
+
+  
+NoMethodError (undefined method `user=' for nil:NilClass):
+  
+app/controllers/qoutations_controller.rb:26:in `create'
+Started GET "/qoutations" for 127.0.0.1 at 2021-09-10 11:20:02 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 10187)
+Completed 200 OK in 21ms (Views: 13.4ms | ActiveRecord: 5.3ms | Allocations: 11940)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 11:20:04 +0700
+Processing by QoutationsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/new.html.erb within layouts/application
+  Rendered qoutations/_form.html.erb (Duration: 1.7ms | Allocations: 739)
+  Rendered qoutations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3996)
+Completed 200 OK in 17ms (Views: 6.1ms | ActiveRecord: 3.5ms | Allocations: 8785)
+
+
+Started POST "/qoutations" for 127.0.0.1 at 2021-09-10 11:20:10 +0700
+Processing by QoutationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "qoutation"=>{"quote"=>"please work"}, "commit"=>"Create Qoutation"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.6ms | Allocations: 2528)
+
+
+  
+NoMethodError (undefined method `user=' for nil:NilClass):
+  
+app/controllers/qoutations_controller.rb:27:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotation (20210910042519)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "quotations" ADD "role_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910042607)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "quotations" ADD "role_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910043223)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910043223)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotation (20210910043728)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotation (20210910043728)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "quotation" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotation (20210910043728)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotation (20210910043728)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910044805)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910044805)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910044805)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910051102)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5008.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "qouteBoard_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (29.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "qouteBoard_development"[0m
+  [1m[35m (11.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "qouteBoard_test"[0m
+  [1m[35m (74.5ms)[0m  [1m[35mCREATE DATABASE "qouteBoard_development" ENCODING = 'unicode'[0m
+  [1m[35m (63.3ms)[0m  [1m[35mCREATE DATABASE "qouteBoard_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateQoutations (20210910024141)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "qoutations" ("id" bigserial primary key, "quote" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910024141"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20210910024423)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910024423"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRoles (20210910025214)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "roles" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910025214"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleToUsers (20210910035527)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "role_id" bigint NOT NULL[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910035527"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserToQuotations (20210910051102)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "quotations" ADD "user_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToQuotations (20210910051102)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "qoutations" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE INDEX "index_qoutations_on_user_id" ON "qoutations" ("user_id")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "qoutations" ADD CONSTRAINT "fk_rails_74a45955f6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910051102"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-10 05:21:09.526649"], ["updated_at", "2021-09-10 05:21:09.526649"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 12:22:44 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.9ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1054)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6134)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 4.0ms | Allocations: 7605)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 12:22:47 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 269)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 609)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 7062)
+Completed 200 OK in 33ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 12766)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 12:22:54 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 632)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 113)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4874)
+Completed 200 OK in 213ms (Views: 6.8ms | ActiveRecord: 7.8ms | Allocations: 16320)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7997745985137473880)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7997745985137473880)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 127.0.0.1 at 2021-09-10 12:24:30 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-10 12:24:32 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4482)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.7ms | Allocations: 5918)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 12:24:34 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4628)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 2.8ms | Allocations: 10268)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-09-10 12:24:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 277)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5246)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 6991)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-09-10 12:24:36 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.8ms | Allocations: 2280)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1094)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 4252)
+Completed 200 OK in 200ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5020)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 12:24:41 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 50)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4125)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 12:24:46 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 522)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 113)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4756)
+Completed 200 OK in 202ms (Views: 7.5ms | ActiveRecord: 4.8ms | Allocations: 12699)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Create (0.6ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Admin"], ["created_at", "2021-09-10 05:26:09.256438"], ["updated_at", "2021-09-10 05:26:09.256438"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Create (0.6ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Member"], ["created_at", "2021-09-10 05:26:09.270652"], ["updated_at", "2021-09-10 05:26:09.270652"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "admin@ait.asia"], ["encrypted_password", "$2a$12$ZIegj3UEYWAAExJLjYtkI.ued5LHPLiOqh9KbMgamYS85JAIn8vkK"], ["created_at", "2021-09-10 05:26:09.462659"], ["updated_at", "2021-09-10 05:26:09.462659"], ["role_id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "member@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "member@ait.asia"], ["encrypted_password", "$2a$12$yx3hkChedhIqfV0KQlqILOtAQl24h8dKcNY2c7k8C9xqrovxzVkiy"], ["created_at", "2021-09-10 05:26:09.644934"], ["updated_at", "2021-09-10 05:26:09.644934"], ["role_id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2021-09-10 12:26:21 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.5ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 3977)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.5ms | Allocations: 4480)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-09-10 12:26:22 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 112)
+  Rendered /home/mufaddal/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/devise-4.8.0/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1087)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4119)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4729)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-09-10 12:26:27 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"st122331@ait.asia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mRole Load (0.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "Member"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `assign_role'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st122331@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "st122331@ait.asia"], ["encrypted_password", "$2a$12$NQIkT96vTc1g1LfMABJEuuBEth7xhn/BEB/JkcrrAqwYGz4ghQIBu"], ["created_at", "2021-09-10 05:26:27.525059"], ["updated_at", "2021-09-10 05:26:27.525059"], ["role_id", 2]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 208ms (ActiveRecord: 8.2ms | Allocations: 8385)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-10 12:26:27 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.1ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 919)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4820)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 3.4ms | Allocations: 5299)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 12:26:31 +0700
+Processing by QoutationsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/new.html.erb within layouts/application
+  Rendered qoutations/_form.html.erb (Duration: 1.5ms | Allocations: 636)
+  Rendered qoutations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3743)
+Completed 200 OK in 28ms (Views: 7.4ms | ActiveRecord: 4.8ms | Allocations: 8005)
+
+
+Started POST "/qoutations" for 127.0.0.1 at 2021-09-10 12:26:55 +0700
+Processing by QoutationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "qoutation"=>{"quote"=>"hello"}, "commit"=>"Create Qoutation"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms | Allocations: 2478)
+
+
+  
+NoMethodError (undefined method `user=' for nil:NilClass):
+  
+app/controllers/qoutations_controller.rb:27:in `create'
+Started GET "/" for 127.0.0.1 at 2021-09-10 12:33:47 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.2ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1054)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 9457)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 3.1ms | Allocations: 10897)
+
+
+Started GET "/qoutations/new" for 127.0.0.1 at 2021-09-10 12:33:50 +0700
+Processing by QoutationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/new.html.erb within layouts/application
+  Rendered qoutations/_form.html.erb (Duration: 1.5ms | Allocations: 740)
+  Rendered qoutations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3996)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 8694)
+
+
+Started POST "/qoutations" for 127.0.0.1 at 2021-09-10 12:33:55 +0700
+Processing by QoutationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "qoutation"=>{"quote"=>"hello"}, "commit"=>"Create Qoutation"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/qoutations_controller.rb:29:in `block in create'
+  [1m[36mQoutation Create (1.3ms)[0m  [1m[32mINSERT INTO "qoutations" ("quote", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quote", "hello"], ["created_at", "2021-09-10 05:33:55.587363"], ["updated_at", "2021-09-10 05:33:55.587363"], ["user_id", 3]]
+  ↳ app/controllers/qoutations_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/qoutations_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/qoutations/1
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms | Allocations: 4751)
+
+
+Started GET "/qoutations/1" for 127.0.0.1 at 2021-09-10 12:33:55 +0700
+Processing by QoutationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations" WHERE "qoutations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/qoutations_controller.rb:65:in `set_qoutation'
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/show.html.erb within layouts/application
+  Rendered qoutations/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4132)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 1.6ms | Allocations: 5633)
+
+
+Started GET "/qoutations" for 127.0.0.1 at 2021-09-10 12:34:08 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (1.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4891)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 2.5ms | Allocations: 5367)
+
+
+Started DELETE "/qoutations/1" for 127.0.0.1 at 2021-09-10 12:35:10 +0700
+Processing by QoutationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQoutation Load (1.6ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations" WHERE "qoutations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/qoutations_controller.rb:65:in `set_qoutation'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/qoutations_controller.rb:54:in `destroy'
+  [1m[36mQoutation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "qoutations" WHERE "qoutations"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/qoutations_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/qoutations_controller.rb:54:in `destroy'
+Redirected to http://localhost:3000/qoutations
+Completed 302 Found in 26ms (ActiveRecord: 15.6ms | Allocations: 4074)
+
+
+Started GET "/qoutations" for 127.0.0.1 at 2021-09-10 12:35:10 +0700
+Processing by QoutationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering qoutations/index.html.erb within layouts/application
+  [1m[36mQoutation Load (0.7ms)[0m  [1m[34mSELECT "qoutations".* FROM "qoutations"[0m
+  ↳ app/views/qoutations/index.html.erb:14
+  Rendered qoutations/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4789)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 2.2ms | Allocations: 5269)
+
+
