@@ -1,0 +1,22 @@
+<% if current_user %>
+  <h1>Welcome <%= current_user.name%></h1>
+  <p>Name: <%= current_user.email%></p>
+  <%= render 'notification_test/index' %>
+  <div id="messages" class="messages">
+    <div id="messages-table" class="messages-table">
+      <div class="message">
+        <span>
+          <div class="message-user">
+          </div>
+          <div class="message-content">
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script>
+  function dismiss(id) {
+    document.getElementById(id).parentElement.outerHTML = "";
+  }
+</script>

@@ -1,0 +1,19 @@
+<%= form_with url: "notification_test/send_notification", method: :post do |f| %>
+  <div >
+    <%= f.label 'User: '%>
+    <div>
+      <%= f.select( :user, User.all.collect {|q| [ q.name, q.id] },{prompt: "Select user" }, {class:"form-select"})%>
+    </div>
+  </div>
+  <br>
+  <div >
+    <%= f.label :content, "Content: "%><br/>
+    <div >
+      <%= f.text_field :content%><br/>
+    </div>
+  </div>
+  <br>
+  <div >
+    <%= f.submit 'Send Message', class: "btn" ,data: { disable_with: false }%>
+  </div>
+<% end %>
